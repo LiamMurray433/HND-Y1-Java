@@ -4,7 +4,6 @@ import java.util.Random;
 public class Game {
 
 
-    static String[] weapons = {"Rock", "Paper", "Scissor"};
     static int playerPick, cpuPick;
     static int playerScore, cpuScore;
 
