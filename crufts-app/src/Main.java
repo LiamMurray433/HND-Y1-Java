@@ -5,6 +5,7 @@ public class Main {
         String username;
         String password;
 
+        String[] breederRoles = {"Judge", "Groomer"};
         // Adding a new admin
         Admin admin = new Admin("Liam", "1111");
         System.out.println(admin.toString());
@@ -23,17 +24,47 @@ public class Main {
         // Adding new Breeds
         Breed husky = new Breed("Husky");
         Breed labrador = new Breed("Labrador");
+        Breed beagle = new Breed("Beagle");
         System.out.println(husky.toString());
         System.out.println(labrador.toString());
+        System.out.println(beagle.toString());
         System.out.println();
 
 
         // Add new Breeders
-        Breeder breeder1 = new Breeder("John","Doe", "01/02/1955", "123 Dog Street", "01231 2121","Judge");
-        Breeder breeder2 = new Breeder("Jane", "Doe", "02/04/1991","324 Avenue", "0131 556 3422","Groomer");
+        Breeder breeder1 = new Breeder("John","Doe", "01/02/1955", "Edinburgh", "0123 2121 2387", breederRoles[0]);
+        Breeder breeder2 = new Breeder("Jane", "Doe", "02/04/1991","Liverpool", "0131 556 3422",breederRoles[1]);
+        Breeder breeder3 = new Breeder("Bob", "Lazar", "06/10/1978","Glasgow", "0131 556 3422",breederRoles[1]);
         System.out.println(breeder1.toString());
         System.out.println(breeder2.toString());
         System.out.println();
+
+        // Add new trainers
+        Trainer trainer1 = new Trainer("Mark", "Morrison","23/01/1991","Edinburgh","0141 9999 8743");
+        Trainer trainer2 = new Trainer("Sarah","Anderson", "11/11/1941", "London","0165 2222 2222");
+        Trainer trainer3 = new Trainer("Mia","McDonald", "23/12/1981", "Aberdeen","0235 3432 2334");
+        System.out.println(trainer1.toString());
+        System.out.println(trainer2.toString());
+        System.out.println(trainer3.toString());
+        System.out.println();
+
+        // Add new dog
+        Dog dog1 = new Dog("Ghost", "White and ginger","05/05/2017", "Male", husky,breeder1, trainer1);
+        Dog dog2 = new Dog("Storm", "Black","12/12/2022", "Male", labrador,breeder2, trainer2);
+        Dog dog3 = new Dog("Max", "White and others","06/08/2020", "Female", beagle,breeder2, trainer2);
+        System.out.println(dog1.toString());
+        System.out.println(dog2.toString());
+        System.out.println(dog3.toString());
+        System.out.println();
+
+
+        // Add new Category
+        Category category1 = new Category("Gundog Group");
+        Category category2 = new Category("Hound Group");
+        Category category3 = new Category("Pastoral Group");
+        System.out.println(category1.toString());
+        System.out.println(category2.toString());
+        System.out.println(category3.toString());
 
     }
     private static boolean checkUserCredentials(String username,String password, Admin admin){
