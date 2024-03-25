@@ -4,6 +4,10 @@ public class Main {
         // Variables
         String username;
         String password;
+        String scoreBoard = "0.0";
+        double score = 0.0;
+        int points;
+        double pointsD;
 
         String[] breederRoles = {"Judge", "Groomer"};
         // Adding a new admin
@@ -34,9 +38,11 @@ public class Main {
         // Add new Breeders
         Breeder breeder1 = new Breeder("John","Doe", "01/02/1955", "Edinburgh", "0123 2121 2387", breederRoles[0]);
         Breeder breeder2 = new Breeder("Jane", "Doe", "02/04/1991","Liverpool", "0131 556 3422",breederRoles[1]);
-        Breeder breeder3 = new Breeder("Bob", "Lazar", "06/10/1978","Glasgow", "0131 556 3422",breederRoles[1]);
+        Breeder breeder3 = new Breeder("Bob", "Lazar", "06/10/1978","Glasgow", "0131 556 3422",breederRoles[0]);
         System.out.println(breeder1.toString());
         System.out.println(breeder2.toString());
+        System.out.println(breeder3.toString());
+
         System.out.println();
 
         // Add new trainers
@@ -65,6 +71,37 @@ public class Main {
         System.out.println(category1.toString());
         System.out.println(category2.toString());
         System.out.println(category3.toString());
+        System.out.println(category1.toString());
+        System.out.println(category2.toString());
+        System.out.println();
+
+
+        // Add new competitor
+        Competitor competitor1 = new Competitor(category1,breeder1, dog1, scoreBoard);
+        Competitor competitor2 = new Competitor(category2,breeder2, dog2, scoreBoard);
+        Competitor competitor3 = new Competitor(category3,breeder3, dog3, scoreBoard);
+        System.out.println(competitor1.toString());
+        System.out.println(competitor2.toString());
+        System.out.println(competitor3.toString());
+
+
+        // Scoring competitors
+        points = 10;
+        score += breeder1.addPoints(points);
+        scoreBoard = Double.toString(score);
+        competitor1 .setDogScore(scoreBoard);
+        System.out.println(competitor1.toString());
+        System.out.println("Judge " + breeder1.getName() + " Scored:" + points +" to " + competitor1.getDogName() + ".");
+
+        score = 0;
+        pointsD = 15.5;
+        score += breeder1.addPoints(pointsD);
+        scoreBoard = Double.toString(score);
+        competitor2 .setDogScore(scoreBoard);
+        System.out.println(competitor2.toString());
+        System.out.println("Judge " + breeder1.getName() + " Scored:" + pointsD +" to " + competitor2.getDogName() + ".");
+
+
 
     }
     private static boolean checkUserCredentials(String username,String password, Admin admin){

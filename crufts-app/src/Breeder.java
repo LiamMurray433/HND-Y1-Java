@@ -1,4 +1,4 @@
-public class Breeder extends Person {
+public class Breeder extends Person implements iLadder, IRole {
 
     public static int breederCounter = 0;
     private String bID;
@@ -47,17 +47,6 @@ public class Breeder extends Person {
         return bPhone;
     }
 
-    public String getbRole() {
-        return bRole;
-    }
-
-    public int getbScore() {
-        return bScore;
-    }
-
-    public double getbScoreD() {
-        return bScoreD;
-    }
 
     // Setters
     @Override
@@ -87,17 +76,34 @@ public class Breeder extends Person {
         this.bPhone = bPhone;
     }
 
-    public void setbRole(String bRole) {
-        this.bRole = bRole;
+    public String getRole() {
+        return bRole;
     }
 
-    public void setbScore(int bScore) {
-        this.bScore = bScore;
+    @Override
+    public void setRole(String role) {
+        this.bRole = role;
+    }
+    @Override
+    public int addPoints(int points) {
+        return this.bScore = points;
     }
 
-    public void setbScoreD(double bScoreD) {
-        this.bScoreD = bScoreD;
+    @Override
+    public double addPoints(double points) {
+        return this.bScoreD = points;
     }
+
+    @Override
+    public int deletePoints(int points) {
+        return bScore = points;
+    }
+
+    @Override
+    public double deletePoints(double points) {
+        return bScoreD = points;
+    }
+
 
     @Override
     public String toString() {
@@ -111,4 +117,8 @@ public class Breeder extends Person {
                 ", bRole='" + bRole + '\'' +
                 '}';
     }
+
+
+
+
 }
