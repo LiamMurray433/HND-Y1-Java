@@ -86,7 +86,13 @@ public class Main {
 
 
         // Scoring competitors
-        points = 10;
+        points = -10;
+        try{
+            checkScore(points);
+        }catch (Exception e){
+            System.out.println("The System cannot accept negative numbers");
+            points = 0;
+        }
         score += breeder1.addPoints(points);
         scoreBoard = Double.toString(score);
         competitor1 .setDogScore(scoreBoard);
@@ -106,5 +112,11 @@ public class Main {
     }
     private static boolean checkUserCredentials(String username,String password, Admin admin){
         return(admin.getUsername().equals(username)) && (admin.getPassword().equals(password));
+    }
+
+    private static void checkScore(int points){
+        if (points < 0){
+            throw new ArithmeticException("The System cannot accept negative numbers....");
+        }
     }
 }
