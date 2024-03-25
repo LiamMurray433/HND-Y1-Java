@@ -1,7 +1,7 @@
 public class Admin {
 
     private static int adminCounter = 0;
-    private String adminID;
+    private final String adminID;
     private String username;
     private String password;
 
@@ -29,7 +29,7 @@ public class Admin {
     }
 
     public void setPassword(String password){
-
+        this.password = password;
     }
 
     @Override

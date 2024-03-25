@@ -1,29 +1,40 @@
 public class Breed {
     public static int breedCounter = 0;
-    private final String bID;
-    private String breedName;
+    private String bID;
+    private String name;
 
     // Constructor
-    public Breed(String breedName){
+    public Breed(String name){
         this.bID = String.format("%02d",++breedCounter);
-        this.breedName = breedName;
+        this.name = name;
     }
 
     // Getter
-    public String getBreedName() {
-        return breedName;
+
+
+    public String getbID() {
+        return bID;
+    }
+
+    public String getNamee() {
+        return name;
     }
 
     // Setter
-    public void setBreedName(String breedName) {
-        this.breedName = breedName;
+
+    public void setbID(String bID){
+        this.bID = bID;
+    }
+
+    public void setBreedName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Breed{" +
                 "bID='" + bID + '\'' +
-                ", breedName='" + breedName + '\'' +
+                ", breedName='" + name + '\'' +
                 '}';
     }
 }
