@@ -6,6 +6,7 @@ public class Main {
     private static ArrayList<Student> students = new ArrayList<>();
     public static void main(String[] args) {
 
+        // Add students objects to array list
         students.add(new Student("Liam", "Murray", "lm", "123", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\liam.csv"));
         students.add(new Student("Melvin", "Sebastiao", "ms","999","C:\\Programming\\Java-Projects\\student-accounts-record\\src\\melvin.csv"));
         students.add(new Student("Matthew","Walker", "mw", "888","C:\\Programming\\Java-Projects\\student-accounts-record\\src\\matthew.csv"));
@@ -32,10 +33,11 @@ public class Main {
 
         // Check if a student was found with matching credentials
         if (loggedInStudent != null) {
-            // Access the details of the logged-in student
+            // Access the details of the logged-in student and greet student
             System.out.println("Logged in as: " + loggedInStudent.getFirstName() + " " + loggedInStudent.getSurname());
         } else {
             System.out.println("Incorrect username or password");
+            System.exit(0);
         }
 
         MenuOptions menu = new MenuOptions();
