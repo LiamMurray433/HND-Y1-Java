@@ -4,32 +4,30 @@ public class Main {
     public static void main(String[] args) {
 
         // create user and password
-        login user = new login("melvin", "12345");
+        login user = new login("m", "1");
         Scanner scanner =new Scanner(System.in);
 
-        // logIn authetication
-
-
+        // login authentication
         System.out.println("Insert your username and password  ");
         System.out.println("");
 
         if (user.authenticate())
         {
-            System.out.println("");
+            System.out.println(" ");
             System.out.println("logged in");
         }
         else
         {
-            System.out.println("");
+            System.out.println(" ");
             System.out.println("incorrect username or password");
         }
 
 
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("**************************************");
         System.out.println("welcome to your Student account record ");
         System.out.println("**************************************");
-        System.out.println("");
+        System.out.println(" ");
 
         MenuOptions menu = new MenuOptions();
 
