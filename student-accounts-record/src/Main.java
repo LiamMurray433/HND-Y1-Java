@@ -6,8 +6,11 @@ public class Main {
     private static ArrayList<Student> students = new ArrayList<>();
     public static void main(String[] args) {
 
-        students.add(new Student("Liam", "Murray", "lm", "123", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\PurchaseHistory.csv"));
+        students.add(new Student("Liam", "Murray", "lm", "123", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\liam.csv"));
         students.add(new Student("Melvin", "Sebastiao", "ms","999","C:\\Programming\\Java-Projects\\student-accounts-record\\src\\melvin.csv"));
+        students.add(new Student("Matthew","Walker", "mw", "888","C:\\Programming\\Java-Projects\\student-accounts-record\\src\\matthew.csv"));
+        students.add(new Student("Zbigniew","Grabarczyk","zb","777","C:\\Programming\\Java-Projects\\student-accounts-record\\src\\ziggy.csv"));
+        students.add(new Student("Wacka","Ceesay","wc", "666", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\wacka.csv"));
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome, Please log in");
