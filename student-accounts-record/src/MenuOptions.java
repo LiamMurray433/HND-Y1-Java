@@ -1,7 +1,25 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
 public class MenuOptions {
 
     public void option1() {
-        System.out.println("Your purchase History");
+
+        String csvFile = "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\PurchaseHistory.csv";
+        System.out.println("Your Purchase History");
+        try(BufferedReader br = new BufferedReader(new FileReader(csvFile))){
+            String line;
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+
     }
 
     public void option2() {
