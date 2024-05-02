@@ -2,13 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 public class MenuOptions {
 
-    public void option1() {
+    public void option1(Student student) {
 
-        String csvFile = "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\PurchaseHistory.csv";
-        System.out.println("Your Purchase History");
+        String csvFile = student.getcsvFile();
+        System.out.println(student.getFirstName() + "'s" + " Purchase History");
         try(BufferedReader br = new BufferedReader(new FileReader(csvFile))){
             String line;
             while((line = br.readLine()) != null){
