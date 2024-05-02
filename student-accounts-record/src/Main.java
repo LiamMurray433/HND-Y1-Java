@@ -3,15 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // create user and password
-        login user = new login("m", "1");
+        // create Student with login credentials
+        //login user = new login("m", "1");
+        Student student = new Student("Liam", "Murray", "lm", "123", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\PurchaseHistory.csv");
         Scanner scanner =new Scanner(System.in);
 
         // login authentication
         System.out.println("Insert your username and password  ");
         System.out.println("");
 
-        if (user.authenticate())
+        if (student.authenticate())
         {
             System.out.println(" ");
             System.out.println("logged in");
@@ -20,6 +21,7 @@ public class Main {
         {
             System.out.println(" ");
             System.out.println("incorrect username or password");
+            System.exit(0);
         }
 
 
