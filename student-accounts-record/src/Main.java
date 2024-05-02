@@ -1,35 +1,39 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+
+    private static ArrayList<Student> students = new ArrayList<>();
     public static void main(String[] args) {
 
-        // create Student with login credentials
-        //login user = new login("m", "1");
-        Student student = new Student("Liam", "Murray", "lm", "123", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\PurchaseHistory.csv");
-        Scanner scanner =new Scanner(System.in);
+        students.add(new Student("Liam", "Murray", "lm", "123", "C:\\Programming\\Java-Projects\\student-accounts-record\\src\\PurchaseHistory.csv"));
+        students.add(new Student("Melvin", "Sebastiao", "ms","999","C:\\Programming\\Java-Projects\\student-accounts-record\\src\\melvin.csv"));
+        Scanner scanner = new Scanner(System.in);
 
-        // login authentication
-        System.out.println("Insert your username and password  ");
-        System.out.println("");
+        System.out.println("Welcome, Please log in");
 
-        if (student.authenticate())
-        {
-            System.out.println(" ");
-            System.out.println("logged in");
+        // Prompt for login credentials
+        System.out.print("Enter Username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter Password: ");
+        String password = scanner.nextLine();
+
+        // Find the student with matching credentials
+        Student loggedInStudent = null;
+        for (Student student : students) {
+            if (student.authenticate(username, password)) {
+                loggedInStudent = student;
+                break;
+            }
         }
-        else
-        {
-            System.out.println(" ");
-            System.out.println("incorrect username or password");
-            System.exit(0);
+
+        // Check if a student was found with matching credentials
+        if (loggedInStudent != null) {
+            // Access the details of the logged-in student
+            System.out.println("Logged in as: " + loggedInStudent.getFirstName() + " " + loggedInStudent.getSurname());
+        } else {
+            System.out.println("Incorrect username or password");
         }
-
-
-        System.out.println(" ");
-        System.out.println("**************************************");
-        System.out.println("welcome to your Student account record ");
-        System.out.println("**************************************");
-        System.out.println(" ");
 
         MenuOptions menu = new MenuOptions();
 
@@ -47,7 +51,7 @@ public class Main {
 
             {
                 case 1:
-                    menu.option1(student);
+                    menu.option1(loggedInStudent);
                     break;
                 case 2:
                     menu.option2();

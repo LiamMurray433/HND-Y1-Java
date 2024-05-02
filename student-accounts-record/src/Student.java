@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
@@ -72,19 +73,20 @@ public class Student {
         this.csvFile = csvFile;
     }
 
-    public boolean authenticate(){
+    public boolean authenticate(String username, String password){
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter username: ");
-        String enteredUsername =scanner.nextLine();
+//        System.out.println("Enter username: ");
+//        String enteredUsername = scanner.nextLine();
+//
+//        System.out.println("Enter password: ");
+//        String enteredPassword = scanner.nextLine();
 
-        System.out.println("Enter password: ");
-        String enteredPassword =scanner.nextLine();
 
         //Object enteredPassword = null;
         //Object enteredUsername = null;
-        return this.username.equals(enteredUsername)&&this.password.equals(enteredPassword);
+        return this.username.equals(username) && this.password.equals(password);
 
 
     }
