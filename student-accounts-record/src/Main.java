@@ -47,7 +47,7 @@ public class Main {
 
             {
                 case 1:
-                    menu.option1();
+                    menu.option1(student);
                     break;
                 case 2:
                     menu.option2();
